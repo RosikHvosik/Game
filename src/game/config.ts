@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { GameScene } from './GameScene';
+import { GameOverScene } from './GameOverScene';
 
 export function createGame(parent: string): Phaser.Game {
   const config: Phaser.Types.Core.GameConfig = {
@@ -8,7 +9,8 @@ export function createGame(parent: string): Phaser.Game {
     width: 960,
     height: 640,
     backgroundColor: '#0f172a',
-    scene: [GameScene],
+    // Первая сцена в массиве запускается автоматически
+    scene: [GameScene, GameOverScene],
     scale: {
       mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH,
